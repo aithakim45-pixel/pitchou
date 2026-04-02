@@ -1,0 +1,122 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle Cat Paw Background Pattern using SVG */
+.paw-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.05; /* Keeps it professional and subtle */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 224c-53.02 0-96 42.98-96 96s42.98 96 96 96 96-42.98 96-96-42.98-96-96-96zm-104-32c30.93 0 56-25.07 56-56s-25.07-56-56-56-56 25.07-56 56 25.07 56 56 56zm208 0c30.93 0 56-25.07 56-56s-25.07-56-56-56-56 25.07-56 56 25.07 56 56 56zM112 320c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm288 0c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64z'/%3E%3C/svg%3E");
+    background-size: 150px 150px;
+}
+
+/* Header & Navigation */
+header {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid #2c3e50;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid #2c3e50;
+    color: #2c3e50;
+    padding: 10px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.nav-btn:hover {
+    background: #eef2f5;
+}
+
+.nav-btn.active {
+    background: #2c3e50;
+    color: #ffffff;
+}
+
+/* Page Content */
+.content-container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.page-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: center;
+}
+
+.page-content.active {
+    display: block;
+}
+
+.page-content h2 {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+/* Image Formatting */
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    border: 5px solid #f8f9fa;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
